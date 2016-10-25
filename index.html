@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CyberPen</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <div id="main">
+        <!-- This element's contents will be replaced with MainContain -->
+    </div>
+    <!-- electron declaration -->
+    <script>
+        let electron    = require('electron');
+        let remote      = electron.remote;         // Load remote components that contains the dialog dependency
+        let dialog      = electron.remote.dialog;  // Load the dialogs component of the OS
+        let fs          = require('fs');
+        let fontCarrier = require('font-carrier');
+    </script>
+    <!--Main Bundle-->
+    <script src="./src/bundle.js"></script>
+</body>
+</html>

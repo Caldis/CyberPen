@@ -1,0 +1,50 @@
+{
+  "name": "CyberPen",
+  "version": "0.1.0",
+  "description": "Yet another small tools to build the webfonts set for SVG icon, 一个用于本地构建图标字体的工具, 可以将SVG文件打包生成可以引用的SVG/TTF/WOFF文件, 并附带说明页, 采用Electron构建",
+  "main": "main.js",
+  "keywords": [
+    "图标字体",
+    "构建",
+    "本地",
+    "打包",
+    "electron"
+    "iconFonts",
+    "webfonts",
+    "tools",
+    "SVG",
+    "WOFF",
+    "TTF"
+  ],
+  "author": "Cyrus / Team IDEA",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-addons-update": "^15.3.0",
+    "react-dom": "^15.2.1",
+    "react-dropzone": "^3.5.3",
+    "react-render-visualizer": "^0.2.2",
+    "react-tap-event-plugin": "^1.0.0",
+    "immutable": "^3.8.1",
+    "font-carrier": "0.0.12",
+    "material-ui": "^0.15.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "electron-packager": "^7.7.0",
+    "electron-prebuilt": "^1.3.4",
+    "path": "^0.12.7",
+    "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dev"  : "webpack --progress --colors --watch --config ./webpack.dev.config.js",
+    "dist" : "webpack --progress --colors --watch --config ./webpack.dist.config.js",
+    "package" : "electron-packager . CyberPen --platform=win32 --arch=ia32 --version=1.3.0 --out=dist/ --overwrite --ignore=docs --ignore=src/bundle.map --ignore=release --ignore=node_modules/electron-* --ignore=node_modules/.bin --ignore=.git --ignore=.idea --ignore=dist --prune --icon=app/resource/icon.ico --name=CyberPan"
+  }
+}

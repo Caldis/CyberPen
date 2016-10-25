@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图标列表</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "Microsoft Yahei","WenQuanYi Micro Hei",Arial,Verdana,sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        /** 清除内外边距 **/
+        body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+        dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+        pre, /* text formatting elements 文本格式元素 */
+        form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+        th, td /* table elements 表格元素 */ {
+            margin: 0;
+            padding: 0;
+        }
+
+        /** 设置默认字体 **/
+        body,
+        button, input, select, textarea /* for ie */ {
+            font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+        address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+        code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+        small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+        /** 重置列表元素 **/
+        ul, ol { list-style: none; }
+
+        /** 重置文本格式元素 **/
+        a { text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+
+        /** 重置表单元素 **/
+        legend { color: #000; } /* for ie6 */
+        fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+        button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+        /* 注：optgroup 无法扶正 */
+
+        /** 重置表格元素 **/
+        table { border-collapse: collapse; border-spacing: 0; }
+
+        /*正文样式*/
+        .titleWrapper {
+            height: 250px;
+            text-align: left;
+            background-color: #00acbd;
+            position: relative;
+        }
+        .titleWrapperText {
+            font-size: 48px;
+            color: #fff;
+            position: absolute;
+            margin-left: 15%;
+            margin-top: 80px;
+        }
+        .iconGroupWrapper {
+            position: relative;
+            width: 100%;
+        }
+        .iconGroup {
+            margin: 0 auto;
+            width: 960px;
+        }
+        .iconMainTitle {
+            width: 960px;
+            font-weight: bold;
+            margin: 30px auto;
+            font-size: 24px;
+            color: #565454;
+        }
+        .groupName {
+            height: 30px;
+            margin-top: 50px;
+            font-size: 14px;
+            color: rgba(62, 62, 62, 0.83);
+        }
+        .iconInfoWrapper {
+            display: inline-block;
+            margin: 5px;
+            width: 90px;
+            padding: 5px;
+            text-align: center;
+            transition: all .3s ease;
+        }
+        .iconInfoWrapper:hover {
+            background-color: #E0E0E0;
+        }
+        .iconfont {
+            -webkit-user-select: none;
+            cursor: default;
+            color: #757575;
+            font-size: 48px;
+            font-family:"iconfont" !important;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .iconName {
+            font-size: 12px;
+            color: #6d6d6d;
+        }
+        .iconCode {
+            font-size: 12px;
+            color: #6d6d6d;
+            display: inline-block;
+            width: 70px;
+            margin-top: 4px;
+        }
+        .groupHr {
+            width: 960px;
+            height: 1px;
+            background-color: #e1e1e1;
+            margin: 40px auto;
+        }
+        .usageInfo {
+            margin: 80px auto 20px;
+            width: 960px;
+        }
+        .usageMainTitle {
+            font-weight: bold;
+            margin: 30px auto;
+            font-size: 24px;
+            color: #565454;
+        }
+        .usageStep {
+            margin-top: 30px;
+        }
+        .usageTitle {
+            color: rgba(62, 62, 62, 0.83);
+            font-size: 12px;
+        }
+        .usageDiscWrapper {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #F0F0F0;
+            border-left: 4px solid #9999a4;
+        }

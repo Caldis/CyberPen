@@ -1,0 +1,356 @@
+/*global prefix*/
+* {
+    font-family: "Microsoft Yahei","WenQuanYi Micro Hei",Arial,Verdana,sans-serif;
+    -webkit-user-select: none;
+}
+html {
+    overflow: hidden;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+ul, li {
+    list-style:none;
+}
+::selection {
+    background:#13b5b9;
+    color:#fff;
+}
+::-webkit-scrollbar-track-piece {
+    background-color:#eee;
+    border-radius:3px;
+}
+::-webkit-scrollbar {
+    width:6px;
+}
+::-webkit-scrollbar-thumb {
+    background:#c1c1c1;
+    border-radius:3px;
+}
+
+
+/*Main Container*/
+body {
+    height: 100%;
+}
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/*Left Side*/
+.leftSide {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex-grow: 0;
+    order: 0;
+}
+/*Action*/
+.iconFontProjAction {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-grow: 0;
+    order: 0;
+}
+.openIconFontProject {
+}
+.openIconFontProject button {
+    margin-top: 12px;
+}
+.searchIconFontName {
+    margin-left: 12px;
+    width: 166px;
+}
+/*dragHandler*/
+.iconActionHandlerWrapper {
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+    transition: all .5s;
+}
+.iconActionHandlerWrapper.withFiles {
+    height: 146px;
+}
+/*.iconDragHandlerWrapper {*/
+    /*box-sizing: border-box;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*padding: 10px;*/
+/*}*/
+.iconDragHandler {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    -webkit-user-select: none;
+    padding: 10px;
+}
+.iconDragHandler.withFiles {
+    height: 130px;
+    margin: 10px 0;
+}
+.iconDragHandlerOnDrop .iconDragHandlerBorder {
+    background-color: #e4e4e4;
+}
+.iconDragHandlerBorder {
+    cursor: pointer;
+    transition: all .4s;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed rgb(102, 102, 102);
+    border-radius: 5px;
+    opacity: 1.0;
+}
+.iconDragHandlerBorder:hover {
+    opacity: 0.6;
+}
+.iconDragHandlerBorder:active {
+    opacity: 0.8;
+}
+.iconDragHandlerBorder.active {
+    background-color: #f3f3f3;
+}
+.iconDragInfo {
+    width: 100%;
+    text-align: center;
+}
+.openFileDialog {
+    display: none;
+}
+/*List Action*/
+.iconActionWrapper {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.addGroupButton {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 5px;
+}
+.editGroupButton {
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+.exportIconButton {
+    margin-top: 10px;
+    float: right;
+    width: 100%;
+}
+/*List*/
+.iconFontListContainer {
+    transition: all .4s;
+    opacity: 0;
+    width: 100%;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+.iconFontListContainer.withFiles {
+    opacity: 1;
+    height: 100%;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding-top: 240px;
+}
+.iconFontListHeader {
+
+}
+.addIconGroup {
+    display: block;
+}
+.iconFontList {
+    width: 100%;
+}
+
+/*Group*/
+.iconGroupWrapper {
+    position: relative;
+}
+.iconGroupDropHandler {
+    transition: opacity .3s ease;
+    position: absolute;
+    width: 100%;
+    height: 49px;
+    top: 0;
+    left: 0;
+    background-color: #cacaca;
+    opacity: 0;
+    z-index: 10;
+}
+.iconGroupDropHandlerOnDrop {
+    opacity: 0.4;
+}
+.iconListItemWrapper {
+    -webkit-user-select: none;
+}
+.groupListNum {
+    color: #909492;
+    font-size: 12px;
+}
+/*icon*/
+.iconItem {
+    overflow: hidden;
+}
+.iconSubInfo {
+    color: #9e9e9e;
+    font-size: 12px;
+}
+/*icon Preview*/
+.iconFontPreviewImg {
+    width: 52px;
+    opacity: 0.7;
+}
+/*icon Info*/
+
+/*iconMenu*/
+.iconItemMenu {
+    position: absolute !important;
+    top: 0;
+    right: 4px;
+}
+
+
+/*Dialog*/
+.dialogInfo {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+}
+/*Edit Icon Dialog*/
+.editIconAttrTextFieldWrapper {
+    /*height: 140px;*/
+}
+/*Open Proj File Dialog*/
+.openProjDialogInfo {
+    margin-top: 25px;
+}
+/*Add Group Dialog*/
+.addGroupTextFieldWrapper {
+    height: 80px;
+}
+/*Change Group Dialog*/
+.changeGroupSelectorWrapper {
+    margin-top: 20px;
+}
+/*Export Dialog*/
+.exportTypeSelectorWrapper {
+    margin-top: 20px;
+}
+.dialogInfoWrapper {
+    margin: 20px auto;
+}
+.exportDialogInfo {
+    margin: 4px auto;
+}
+.exportTypeButton {
+    margin: 5px auto;
+}
+.exportIconFonts {
+    float: left;
+    width: 48.5%;
+}
+.exportProjFiles {
+    float: right;
+    width: 48.5%;
+}
+.exportAllFiles {
+    float: left;
+    width: 100%;
+}
+
+/*Right Side*/
+.rightSide {
+    width: 70%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-grow: 1;
+    order: 1;
+}
+.iconFontDetailRight {
+    width: 80%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.iconFontInfoRight {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    min-width: 200px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+    order: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+.iconFontInfoRightContainer {
+    width: 100%;
+    text-align: right;
+}
+.iconFontNamesRight {
+
+}
+.iconFontSizeRight {
+    display: inline-block;
+    color: #b5b5b5;
+    font-size: 12px;
+}
+.iconFontUnicodeRight {
+    display: inline-block;
+    color: #1d1d1d;
+    font-size: 12px;
+}
+.iconFontActionRight {
+    width: 100%;
+    text-align: right;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+.iconFontPreviewRight {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    order: 1;
+    width: 100%;
+    min-width: 400px;
+    height: 100%;
+    min-height: 100vh;
+}
+.iconFontPreviewImgRight {
+    height: 80%;
+}
