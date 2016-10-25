@@ -47,9 +47,7 @@ npm run package
 - ```material-ui``` (https://github.com/callemall/material-ui)
 - ```immutable-js``` (https://github.com/facebook/immutable-js/)
 - ```react``` (https://github.com/facebook/react)
-- ```css-modules``` (https://github.com/css-modules/css-modules)
 - ```webpack``` (https://github.com/webpack/webpack)
-- ```webpack-dev-server``` (https://github.com/webpack/webpack-dev-server)
 
 
 ## Credit
